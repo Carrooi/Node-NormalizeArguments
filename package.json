@@ -1,0 +1,28 @@
+{
+	"name": "normalize-arguments",
+	"description": "Normalize arguments almost like for overloaded methods (not really)",
+	"version": "1.0.0",
+	"author": {
+		"name": "David Kudera",
+		"email": "sakren@gmail.com"
+	},
+	"keywords": [
+		"arguments",
+		"overload",
+		"parameters",
+		"method",
+		"function"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:sakren/node-normalize-arguments.git"
+	},
+	"license": "MIT",
+	"main": "./lib/Args.js",
+	"devDependencies": {
+		"chai": "~1.8.0"
+	},
+	"scripts": {
+		"test": "cd ./test; mocha ./index.js --reporter spec;"
+	}
+}
