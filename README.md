@@ -21,11 +21,11 @@ $ npm install normalize-arguments
 ```
 var args = require('normalize-arguments');
 
-var fn = function(list, count, args, base) {
+var fn = function(list, count, data, base) {
 	arguments = args(arguments, [args.object, args.number(null), args.object({}), args.string(null)]);
 	list = arguments[0];		// someList
 	count = arguments[1];		// null
-	args = arguments[2];		// {}
+	data = arguments[2];		// {}
 	base = arguments[3];		// 'and base argument'
 };
 
@@ -60,6 +60,9 @@ $ npm test
 ```
 
 ## Changelog
+
+* 1.0.1
+	+ Typo in readme
 
 * 1.0.0
 	+ First version

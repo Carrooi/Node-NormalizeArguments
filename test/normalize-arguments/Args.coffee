@@ -24,7 +24,7 @@ describe 'Args', ->
 		expect(args([1], [args.number, args.string('test')])).to.be.eql([1, 'test'])
 
 	it 'should pass arguments like in first example of doc', ->
-		fn = (list, count, a, base) ->
+		fn = (list, count, data, base) ->
 			return args(arguments, [args.object, args.number(null), args.object({}), args.string(null)])
 
 		expect(fn({}, 'and base argument')).to.be.eql([{}, null, {}, 'and base argument'])

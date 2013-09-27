@@ -33,7 +33,7 @@
     });
     it('should pass arguments like in first example of doc', function() {
       var fn;
-      fn = function(list, count, a, base) {
+      fn = function(list, count, data, base) {
         return args(arguments, [args.object, args.number(null), args.object({}), args.string(null)]);
       };
       return expect(fn({}, 'and base argument')).to.be.eql([{}, null, {}, 'and base argument']);
