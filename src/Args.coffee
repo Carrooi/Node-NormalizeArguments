@@ -42,7 +42,7 @@ expandArguments = (params = [], expected = []) ->
 		e = e() if isFunction(e)
 		actual = type.call(params[i])
 
-		if e.type != 'any' && ((e.type == 'oneOf' && e.types.indexOf(actual) == -1) || (e.type != 'oneOf' && types[e.type] != actual))
+		if params[i] != null && e.type != 'any' && ((e.type == 'oneOf' && e.types.indexOf(actual) == -1) || (e.type != 'oneOf' && types[e.type] != actual))
 			params.splice(i, 0, emptyArgument)
 
 	return params

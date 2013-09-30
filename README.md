@@ -76,6 +76,9 @@ $ npm test
 
 ## Changelog
 
+* 1.1.1
+	+ Passed null in method (default behavior without this package)
+
 * 1.1.0
 	+ Added oneOf option
 

@@ -34,6 +34,10 @@ describe 'Args', ->
 		expect(args(['one'], [args.object({}), args.string])).to.be.eql([{}, 'one'])
 		expect(args(['one', 2, 'three', 4], [args.string])).to.be.eql(['one', 2, 'three', 4])
 
+	it 'should let arguments as they are with null arguments in it', ->
+		params = ['message', null, {arg: 'arg'}]
+		expect(args(params, [args.string, args.number(null), args.object({})])).to.be.eql(params)
+
 	it 'should pass arguments for oneOf options', ->
 		expect(args([[2, 3]], [args.number(1), args.oneOf([args.array, args.object])])).to.be.eql([1, [2, 3]])
 
