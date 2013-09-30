@@ -29,9 +29,16 @@ describe 'Args', ->
 
 		expect(fn({}, 'and base argument')).to.be.eql([{}, null, {}, 'and base argument'])
 
-
-
 	it 'should pass default values for advanced options', ->
 		expect(args([1, 'one', true], [args.number, args.boolean(false), args.string, args.boolean])).to.be.eql([1, false, 'one', true])
 		expect(args(['one'], [args.object({}), args.string])).to.be.eql([{}, 'one'])
 		expect(args(['one', 2, 'three', 4], [args.string])).to.be.eql(['one', 2, 'three', 4])
+
+	it 'should pass arguments for oneOf options', ->
+		expect(args([[2, 3]], [args.number(1), args.oneOf([args.array, args.object])])).to.be.eql([1, [2, 3]])
+
+	it 'should throw an error if argument is not in oneOf', ->
+		expect( -> args(['test'], [args.oneOf([args.array, args.object])]) ).to.throw(Error)
+
+	it 'should set default argument for oneOf option', ->
+		expect(args([2], [args.oneOf([args.array, args.object], {})])).to.be.eql([{}, 2])

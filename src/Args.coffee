@@ -15,6 +15,14 @@ object = (d) -> return {type: 'object', d: d}
 any = (d) ->return {type: 'any', d: d}
 fn = (d) -> return {type: 'fn', d: d}
 
+oneOf = (list, d = null) ->
+	readable = []
+	for type, i in list
+		t = type().type
+		list[i] = types[t]
+		readable.push(t)
+	return {type: 'oneOf', d: d, dCalled: arguments.length == 2, types: list, readable: readable}
+
 
 emptyArgument = {}
 type = Object.prototype.toString
@@ -32,7 +40,9 @@ count = (num) ->
 expandArguments = (params = [], expected = []) ->
 	for e, i in expected
 		e = e() if isFunction(e)
-		if e.type != 'any' && types[e.type] != type.call(params[i])
+		actual = type.call(params[i])
+
+		if e.type != 'any' && ((e.type == 'oneOf' && e.types.indexOf(actual) == -1) || (e.type != 'oneOf' && types[e.type] != actual))
 			params.splice(i, 0, emptyArgument)
 
 	return params
@@ -52,15 +62,26 @@ args = (params = [], expected = []) ->
 
 	for param, i in params
 		expect = null
-		if typeof expected[i] != 'undefined'
-			expect = if isFunction(expected[i]) then expected[i]().type else expected[i].type
+		e = expected[i]
+		if typeof e != 'undefined'
+			expect = if isFunction(e) then e().type else e.type
 
 		if param == emptyArgument
-			if isFunction(expected[i])
-				num = i + 1
-				throw new Error num + count(num) + ' argument must be ' + expected[i]().type
+			fn = isFunction(e)
+			if fn || (!fn && e.type == 'oneOf' && e.dCalled == false)
+				if fn
+					must = e().type
+				else
+					if e.readable.length == 1
+						must = e.readable[0]
+					else
+						last = e.readable.pop()
+						must = e.readable.join(', ') + ' or ' + last
 
-			params[i] = expected[i].d
+				num = i + 1
+				throw new Error num + count(num) + ' argument must be ' + must
+
+			params[i] = e.d
 
 	return params
 
@@ -72,6 +93,7 @@ args.array = array
 args.object = object
 args.any = any
 args.fn = fn
+args.oneOf = oneOf
 
 
 module.exports = args
