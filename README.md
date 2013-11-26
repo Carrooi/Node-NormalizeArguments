@@ -76,6 +76,9 @@ $ npm test
 
 ## Changelog
 
+* 1.1.2
+	+ Some optimizations
+
 * 1.1.1
 	+ Passed null in method (default behavior without this package)
 

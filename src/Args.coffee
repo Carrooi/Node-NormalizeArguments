@@ -1,27 +1,27 @@
 types =
 	string: '[object String]'
 	number: '[object Number]'
-	boolean: '[object Boolean]'
+	'boolean': '[object Boolean]'
 	array: '[object Array]'
 	object: '[object Object]'
 	fn: '[object Function]'
 
 
-string = (d) -> return {type: 'string', d: d}
-number = (d) -> return {type: 'number', d: d}
-boolean = (d) -> return {type: 'boolean', d: d}
-array = (d) -> return {type: 'array', d: d}
-object = (d) -> return {type: 'object', d: d}
-any = (d) ->return {type: 'any', d: d}
-fn = (d) -> return {type: 'fn', d: d}
-
-oneOf = (list, d = null) ->
-	readable = []
-	for type, i in list
-		t = type().type
-		list[i] = types[t]
-		readable.push(t)
-	return {type: 'oneOf', d: d, dCalled: arguments.length == 2, types: list, readable: readable}
+exportFunc =
+	string: (d) -> return {type: 'string', d: d}
+	number: (d) -> return {type: 'number', d: d}
+	'boolean': (d) -> return {type: 'boolean', d: d}
+	array: (d) -> return {type: 'array', d: d}
+	object: (d) -> return {type: 'object', d: d}
+	any: (d) ->return {type: 'any', d: d}
+	fn: (d) -> return {type: 'fn', d: d}
+	oneOf: (list, d = null) ->
+		readable = []
+		for type, i in list
+			t = type().type
+			list[i] = types[t]
+			readable.push(t)
+		return {type: 'oneOf', d: d, dCalled: arguments.length == 2, types: list, readable: readable}
 
 
 emptyArgument = {}
@@ -86,14 +86,8 @@ args = (params = [], expected = []) ->
 	return params
 
 
-args.string = string
-args.number = number
-args.boolean = boolean
-args.array = array
-args.object = object
-args.any = any
-args.fn = fn
-args.oneOf = oneOf
+for name, fn of exportFunc
+	args[name] = fn
 
 
 module.exports = args
