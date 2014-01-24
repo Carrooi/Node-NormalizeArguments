@@ -20,9 +20,10 @@
 	"license": "MIT",
 	"main": "./lib/Args.js",
 	"devDependencies": {
-		"chai": "~1.8.0"
+		"chai": "~1.8.1",
+		"mocha": "~1.17.1"
 	},
 	"scripts": {
-		"test": "cd ./test; mocha ./index.js --reporter spec;"
+		"test": "mocha ./test/index.js --reporter spec;"
 	}
 }
