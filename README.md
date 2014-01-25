@@ -1,3 +1,9 @@
+[![NPM version](https://badge.fury.io/js/normalize-arguments.png)](http://badge.fury.io/js/normalize-arguments)
+[![Dependency Status](https://gemnasium.com/sakren/node-normalize-arguments.png)](https://gemnasium.com/sakren/node-normalize-arguments)
+[![Build Status](https://travis-ci.org/sakren/node-normalize-arguments.png?branch=master)](https://travis-ci.org/sakren/node-normalize-arguments)
+
+[![Donate](http://b.repl.ca/v1/donate-PayPal-brightgreen.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LWVXQAPZ33USW)
+
 # normalize-arguments
 
 Normalize arguments almost like for overloaded methods (not really).
