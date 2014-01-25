@@ -1,0 +1,1 @@
+window.normalizeArguments = require('/lib/Args.js');

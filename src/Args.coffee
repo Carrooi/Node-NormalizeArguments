@@ -48,16 +48,10 @@ expandArguments = (params = [], expected = []) ->
 	return params
 
 
-normalizeArguments = (params) ->
-	result = []
-	for i, param of params
-		result.push param
-
-	return result
-
-
 args = (params = [], expected = []) ->
-	params = normalizeArguments(params) if type.call(params) != '[object Array]'
+	if type.call(params) == '[object Arguments]'
+		params = Array.prototype.slice.call(params)
+
 	params = expandArguments(params, expected)
 
 	for param, i in params

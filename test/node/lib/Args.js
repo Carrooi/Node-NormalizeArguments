@@ -4,7 +4,7 @@
 
   expect = require('chai').expect;
 
-  args = require('../../lib/Args');
+  args = require('../../../lib/Args');
 
   describe('Args', function() {
     it('should return empty array', function() {

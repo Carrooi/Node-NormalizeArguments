@@ -1,0 +1,13 @@
+{
+	"includes": [
+		"./setup.json"
+	],
+	"packages": {
+		"normalize-arguments": {
+			"target": "./normalizeArguments.js"
+		}
+	},
+	"debugger": {
+		"minify": false
+	}
+}

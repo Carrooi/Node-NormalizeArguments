@@ -1,3 +1,9 @@
+[![NPM version](https://badge.fury.io/js/normalize-arguments.png)](http://badge.fury.io/js/normalize-arguments)
+[![Dependency Status](https://gemnasium.com/sakren/node-normalize-arguments.png)](https://gemnasium.com/sakren/node-normalize-arguments)
+[![Build Status](https://travis-ci.org/sakren/node-normalize-arguments.png?branch=master)](https://travis-ci.org/sakren/node-normalize-arguments)
+
+[![Donate](http://b.repl.ca/v1/donate-PayPal-brightgreen.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LWVXQAPZ33USW)
+
 # normalize-arguments
 
 Normalize arguments almost like for overloaded methods (not really).
@@ -10,16 +16,26 @@ This package just normalize order of arguments in method, so you do not need to 
 
 Based on data type of arguments.
 
+You can use this package also in browser for example with [simq](https://github.com/sakren/node-simq) or use standalone
+build.
+
 ## Installation
 
 ```
 $ npm install normalize-arguments
 ```
 
+Standalone build for browser:
+* [Source version](https://raw.github.com/sakren/node-normalize-arguments/master/normalizeArguments.js)
+* [Minified version](https://raw.github.com/sakren/node-normalize-arguments/master/normalizeArguments.min.js)
+
 ## Usage
 
 ```
 var args = require('normalize-arguments');
+
+// or standalone build in browser:
+var args = normalizeArguments;
 
 var fn = function(list, count, data, base) {
 	arguments = args(arguments, [args.object, args.number(null), args.object({}), args.string(null)]);
@@ -75,6 +91,12 @@ $ npm test
 ```
 
 ## Changelog
+
+* 1.2.0
+	+ Added tests for browser
+	+ Added standalone build for browser
+	+ Added badges and travis build
+	+ Optimized arguments parsing
 
 * 1.1.2
 	+ Some optimizations
