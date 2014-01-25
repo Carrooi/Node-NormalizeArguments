@@ -1,1 +1,1 @@
-require('./normalize-arguments/Args');
+require('./lib/Args');
