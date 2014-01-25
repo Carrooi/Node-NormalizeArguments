@@ -1,0 +1,19 @@
+{
+	"packages": {
+		"normalize-arguments": {
+			"modules": [
+				"./lib/*.js"
+			],
+			"ignore": {
+				"packageFiles": true
+			},
+			"run": [
+				"/lib/Expand.js"
+			]
+		}
+	},
+	"debugger": {
+		"expose": false,
+		"filesStats": false
+	}
+}
