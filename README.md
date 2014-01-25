@@ -26,8 +26,8 @@ $ npm install normalize-arguments
 ```
 
 Standalone build for browser:
-* [Source version](https://github.com/sakren/node-normalize-arguments/blob/master/normalizeArguments.js)
-* [Minified version](https://github.com/sakren/node-normalize-arguments/blob/master/normalizeArguments.min.js)
+* [Source version](https://raw.github.com/sakren/node-normalize-arguments/master/normalizeArguments.js)
+* [Minified version](https://raw.github.com/sakren/node-normalize-arguments/master/normalizeArguments.min.js)
 
 ## Usage
 
@@ -91,6 +91,12 @@ $ npm test
 ```
 
 ## Changelog
+
+* 1.2.0
+	+ Added tests for browser
+	+ Added standalone build for browser
+	+ Added badges and travis build
+	+ Optimized arguments parsing
 
 * 1.1.2
 	+ Some optimizations
