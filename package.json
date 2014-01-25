@@ -24,6 +24,6 @@
 		"mocha": "~1.17.1"
 	},
 	"scripts": {
-		"test": "mocha ./test/index.js --reporter spec;"
+		"test": "mocha ./test/node/index.js --reporter spec;"
 	}
 }
