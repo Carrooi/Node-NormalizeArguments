@@ -21,12 +21,17 @@
 	"main": "./lib/Args.js",
 	"devDependencies": {
 		"chai": "~1.8.1",
-		"mocha": "~1.17.1"
+		"mocha": "~1.17.1",
+		"mocha-phantomjs": "~3.3.1",
+		"phantomjs": "~1.9.6-0"
 	},
 	"scripts": {
-		"test": "mocha ./test/index.js --reporter spec",
+		"test": "npm run test-node && npm run test-browser",
+		"test-node": "mocha ./test/node/index.js --reporter spec;",
+		"test-browser": "mocha-phantomjs -p ./node_modules/phantomjs/bin/phantomjs ./test/browser/index.html",
 		"build-and-test": "npm run build && npm run test",
-		"build": "npm run build-standalone && npm run build-minified",
+		"build": "npm run build-standalone && npm run build-minified && npm run build-test",
+		"build-test": "cd ./test/browser; simq build;",
 		"build-standalone": "simq build --config ./config/source.json",
 		"build-minified": "simq build --config ./config/minified.json"
 	}

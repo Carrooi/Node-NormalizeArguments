@@ -1,0 +1,20 @@
+{
+	"packages": {
+		"tests": {
+			"target": "./public/application.js",
+			"modules": [
+				"./tests/*.coffee"
+			],
+			"run": [
+				"/tests/Args"
+			],
+			"ignore": {
+				"packageFiles": true
+			}
+		}
+	},
+	"debugger": {
+		"minify": false,
+		"filesStats": false
+	}
+}
