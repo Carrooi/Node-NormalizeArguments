@@ -16,16 +16,26 @@ This package just normalize order of arguments in method, so you do not need to 
 
 Based on data type of arguments.
 
+You can use this package also in browser for example with [simq](https://github.com/sakren/node-simq) or use standalone
+build.
+
 ## Installation
 
 ```
 $ npm install normalize-arguments
 ```
 
+Standalone build for browser:
+* [Source version](https://github.com/sakren/node-normalize-arguments/blob/master/normalizeArguments.js)
+* [Minified version](https://github.com/sakren/node-normalize-arguments/blob/master/normalizeArguments.min.js)
+
 ## Usage
 
 ```
 var args = require('normalize-arguments');
+
+// or standalone build in browser:
+var args = normalizeArguments;
 
 var fn = function(list, count, data, base) {
 	arguments = args(arguments, [args.object, args.number(null), args.object({}), args.string(null)]);
