@@ -1,8 +1,8 @@
-[![NPM version](https://badge.fury.io/js/normalize-arguments.png)](http://badge.fury.io/js/normalize-arguments)
-[![Dependency Status](https://gemnasium.com/sakren/node-normalize-arguments.png)](https://gemnasium.com/sakren/node-normalize-arguments)
-[![Build Status](https://travis-ci.org/sakren/node-normalize-arguments.png?branch=master)](https://travis-ci.org/sakren/node-normalize-arguments)
+[![NPM version](https://img.shields.io/npm/v/normalize-arguments.svg?style=flat-square)](http://badge.fury.io/js/normalize-arguments)
+[![Dependency Status](https://img.shields.io/gemnasium/Carrooi/Node-NormalizeArguments.svg?style=flat-square)](https://gemnasium.com/Carrooi/Node-NormalizeArguments)
+[![Build Status](https://img.shields.io/travis/Carrooi/Node-NormalizeArguments.svg?style=flat-square)](https://travis-ci.org/Carrooi/Node-NormalizeArguments)
 
-[![Donate](http://b.repl.ca/v1/donate-PayPal-brightgreen.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LWVXQAPZ33USW)
+[![Donate](https://img.shields.io/badge/donate-PayPal-brightgreen.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LWVXQAPZ33USW)
 
 # normalize-arguments
 
@@ -18,6 +18,14 @@ Based on data type of arguments.
 
 You can use this package also in browser for example with [simq](https://github.com/sakren/node-simq) or use standalone
 build.
+
+## Help
+
+Unfortunately I don't have any more time to maintain this repository :-( 
+
+Don't you want to save me and this project by taking over it?
+
+![sad cat](https://raw.githubusercontent.com/sakren/sakren.github.io/master/images/sad-kitten.jpg)
 
 ## Installation
 
@@ -91,6 +99,10 @@ $ npm test
 ```
 
 ## Changelog
+
+* 1.2.1
+	+ Move under Carrooi organization
+	+ Abandon package
 
 * 1.2.0
 	+ Added tests for browser
